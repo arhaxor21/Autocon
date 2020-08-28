@@ -34,7 +34,6 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 HISTFILE=~/.zsh_history
 HISTSIZE=1000
 SAVEHIST=2000
-setopt hist_expire_dups_firs
 setopt hist_ignore_dups     
 setopt hist_ignore_space    
 setopt hist_verify         
@@ -212,7 +211,7 @@ curl -s https://crt.sh/\?q\=\%.$ip\&output\=json | jq -r '.[].name_value' | sed 
 
 mscan(){ #runs masscan
 sudo masscan -p4443,2075,2076,6443,3868,3366,8443,8080,9443,9091,3000,8000,5900,8081,6000,10000,8181,3306,5000,4000,8888,5432,15672,9999,161,4044,7077,4040,9000,8089,443,744$}
-}
+
 
 certspotter(){ 
 curl -s https://certspotter.com/api/v0/certs\?domain\=$ip | jq '.[].dns_names[]' | sed 's/\"//g' | sed 's/\*\.//g' | sort -u | grep $ip
@@ -249,3 +248,6 @@ curl -s https://crt.sh/?q\=%.$ip\&output\=json | jq -r '.[].name_value' | sed 's
 }
 
 
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/go
+export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
