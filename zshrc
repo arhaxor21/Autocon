@@ -149,7 +149,7 @@ if [ -x /usr/bin/dircolors ]; then
 
 #aliases (In these aliases u can modify your command aliases)
 alias cls='clear'
-alias ip='ifconfig'
+alias ip='ifconfig | grep "ipv4"'
 alias locip='curl ipinfo.io/ip'
 alias netreset='service network-manager restart'
 alias apstart='service apache2 start'
