@@ -158,7 +158,7 @@ alias sshstart='service ssh start'
 alias sshstop='service ssh stop'
 alias pyserver='python -m SimpleHTTPServer'
 alias svstatus='service --status-all' 
-
+alias st='speedtest'
     export LESS_TERMCAP_mb=$'\E[1;31m'    
     export LESS_TERMCAP_md=$'\E[1;36m'     
     export LESS_TERMCAP_me=$'\E[0m'       
