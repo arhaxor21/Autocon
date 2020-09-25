@@ -125,7 +125,7 @@ new_line_before_prompt=yes
 precmd() {
 
     print -Pn "$TERM_TITLE"
-
+#UjFWYWUyd3piRjlzTUdoZk5HVXpYM1JGTTI0M2ZRPT0=
     
     if [ "$new_line_before_prompt" = yes ]; then
 	if [ -z "$_NEW_LINE_BEFORE_PROMPT" ]; then
