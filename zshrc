@@ -51,9 +51,9 @@ force_color_prompt=yes
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
 
-	color_prompt=yes
+  color_prompt=yes
     else
-	color_prompt=
+  color_prompt=
     fi
 fi
 
@@ -63,50 +63,50 @@ if [ "$color_prompt" = yes ]; then
 
 
     if [ -f /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && [ "$color_prompt" = yes ]; then
-	unsetopt ksharrays
-	. /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-	ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
-	ZSH_HIGHLIGHT_STYLES[default]=none
-	ZSH_HIGHLIGHT_STYLES[unknown-token]=fg=red,bold
-	ZSH_HIGHLIGHT_STYLES[reserved-word]=fg=cyan,bold
-	ZSH_HIGHLIGHT_STYLES[suffix-alias]=fg=green,underline
-	ZSH_HIGHLIGHT_STYLES[global-alias]=fg=magenta
-	ZSH_HIGHLIGHT_STYLES[precommand]=fg=green,underline
-	ZSH_HIGHLIGHT_STYLES[commandseparator]=fg=blue,bold
-	ZSH_HIGHLIGHT_STYLES[autodirectory]=fg=green,underline
-	ZSH_HIGHLIGHT_STYLES[path]=underline
-	ZSH_HIGHLIGHT_STYLES[path_pathseparator]=
-	ZSH_HIGHLIGHT_STYLES[path_prefix_pathseparator]=
-	ZSH_HIGHLIGHT_STYLES[globbing]=fg=blue,bold
-	ZSH_HIGHLIGHT_STYLES[history-expansion]=fg=blue,bold
-	ZSH_HIGHLIGHT_STYLES[command-substitution]=none
-	ZSH_HIGHLIGHT_STYLES[command-substitution-delimiter]=fg=magenta
-	ZSH_HIGHLIGHT_STYLES[process-substitution]=none
-	ZSH_HIGHLIGHT_STYLES[process-substitution-delimiter]=fg=magenta
-	ZSH_HIGHLIGHT_STYLES[single-hyphen-option]=fg=magenta
-	ZSH_HIGHLIGHT_STYLES[double-hyphen-option]=fg=magenta
-	ZSH_HIGHLIGHT_STYLES[back-quoted-argument]=none
-	ZSH_HIGHLIGHT_STYLES[back-quoted-argument-delimiter]=fg=blue,bold
-	ZSH_HIGHLIGHT_STYLES[single-quoted-argument]=fg=yellow
-	ZSH_HIGHLIGHT_STYLES[double-quoted-argument]=fg=yellow
-	ZSH_HIGHLIGHT_STYLES[dollar-quoted-argument]=fg=yellow
-	ZSH_HIGHLIGHT_STYLES[rc-quote]=fg=magenta
-	ZSH_HIGHLIGHT_STYLES[dollar-double-quoted-argument]=fg=magenta
-	ZSH_HIGHLIGHT_STYLES[back-double-quoted-argument]=fg=magenta
-	ZSH_HIGHLIGHT_STYLES[back-dollar-quoted-argument]=fg=magenta
-	ZSH_HIGHLIGHT_STYLES[assign]=none
-	ZSH_HIGHLIGHT_STYLES[redirection]=fg=blue,bold
-	ZSH_HIGHLIGHT_STYLES[comment]=fg=black,bold
-	ZSH_HIGHLIGHT_STYLES[named-fd]=none
-	ZSH_HIGHLIGHT_STYLES[numeric-fd]=none
-	ZSH_HIGHLIGHT_STYLES[arg0]=fg=green
-	ZSH_HIGHLIGHT_STYLES[bracket-error]=fg=red,bold
-	ZSH_HIGHLIGHT_STYLES[bracket-level-1]=fg=blue,bold
-	ZSH_HIGHLIGHT_STYLES[bracket-level-2]=fg=green,bold
-	ZSH_HIGHLIGHT_STYLES[bracket-level-3]=fg=magenta,bold
-	ZSH_HIGHLIGHT_STYLES[bracket-level-4]=fg=yellow,bold
-	ZSH_HIGHLIGHT_STYLES[bracket-level-5]=fg=cyan,bold
-	ZSH_HIGHLIGHT_STYLES[cursor-matchingbracket]=standout
+  unsetopt ksharrays
+  . /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+  ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
+  ZSH_HIGHLIGHT_STYLES[default]=none
+  ZSH_HIGHLIGHT_STYLES[unknown-token]=fg=red,bold
+  ZSH_HIGHLIGHT_STYLES[reserved-word]=fg=cyan,bold
+  ZSH_HIGHLIGHT_STYLES[suffix-alias]=fg=green,underline
+  ZSH_HIGHLIGHT_STYLES[global-alias]=fg=magenta
+  ZSH_HIGHLIGHT_STYLES[precommand]=fg=green,underline
+  ZSH_HIGHLIGHT_STYLES[commandseparator]=fg=blue,bold
+  ZSH_HIGHLIGHT_STYLES[autodirectory]=fg=green,underline
+  ZSH_HIGHLIGHT_STYLES[path]=underline
+  ZSH_HIGHLIGHT_STYLES[path_pathseparator]=
+  ZSH_HIGHLIGHT_STYLES[path_prefix_pathseparator]=
+  ZSH_HIGHLIGHT_STYLES[globbing]=fg=blue,bold
+  ZSH_HIGHLIGHT_STYLES[history-expansion]=fg=blue,bold
+  ZSH_HIGHLIGHT_STYLES[command-substitution]=none
+  ZSH_HIGHLIGHT_STYLES[command-substitution-delimiter]=fg=magenta
+  ZSH_HIGHLIGHT_STYLES[process-substitution]=none
+  ZSH_HIGHLIGHT_STYLES[process-substitution-delimiter]=fg=magenta
+  ZSH_HIGHLIGHT_STYLES[single-hyphen-option]=fg=magenta
+  ZSH_HIGHLIGHT_STYLES[double-hyphen-option]=fg=magenta
+  ZSH_HIGHLIGHT_STYLES[back-quoted-argument]=none
+  ZSH_HIGHLIGHT_STYLES[back-quoted-argument-delimiter]=fg=blue,bold
+  ZSH_HIGHLIGHT_STYLES[single-quoted-argument]=fg=yellow
+  ZSH_HIGHLIGHT_STYLES[double-quoted-argument]=fg=yellow
+  ZSH_HIGHLIGHT_STYLES[dollar-quoted-argument]=fg=yellow
+  ZSH_HIGHLIGHT_STYLES[rc-quote]=fg=magenta
+  ZSH_HIGHLIGHT_STYLES[dollar-double-quoted-argument]=fg=magenta
+  ZSH_HIGHLIGHT_STYLES[back-double-quoted-argument]=fg=magenta
+  ZSH_HIGHLIGHT_STYLES[back-dollar-quoted-argument]=fg=magenta
+  ZSH_HIGHLIGHT_STYLES[assign]=none
+  ZSH_HIGHLIGHT_STYLES[redirection]=fg=blue,bold
+  ZSH_HIGHLIGHT_STYLES[comment]=fg=black,bold
+  ZSH_HIGHLIGHT_STYLES[named-fd]=none
+  ZSH_HIGHLIGHT_STYLES[numeric-fd]=none
+  ZSH_HIGHLIGHT_STYLES[arg0]=fg=green
+  ZSH_HIGHLIGHT_STYLES[bracket-error]=fg=red,bold
+  ZSH_HIGHLIGHT_STYLES[bracket-level-1]=fg=blue,bold
+  ZSH_HIGHLIGHT_STYLES[bracket-level-2]=fg=green,bold
+  ZSH_HIGHLIGHT_STYLES[bracket-level-3]=fg=magenta,bold
+  ZSH_HIGHLIGHT_STYLES[bracket-level-4]=fg=yellow,bold
+  ZSH_HIGHLIGHT_STYLES[bracket-level-5]=fg=cyan,bold
+  ZSH_HIGHLIGHT_STYLES[cursor-matchingbracket]=standout
     fi
 else
     PROMPT='${debian_chroot:+($debian_chroot)}%n@%m:%~%# '
@@ -125,14 +125,13 @@ new_line_before_prompt=yes
 precmd() {
 
     print -Pn "$TERM_TITLE"
-#UjFWYWUyd3piRjlzTUdoZk5HVXpYM1JGTTI0M2ZRPT0=
     
     if [ "$new_line_before_prompt" = yes ]; then
-	if [ -z "$_NEW_LINE_BEFORE_PROMPT" ]; then
-	    _NEW_LINE_BEFORE_PROMPT=1
-	else
-	    print ""
-	fi
+  if [ -z "$_NEW_LINE_BEFORE_PROMPT" ]; then
+      _NEW_LINE_BEFORE_PROMPT=1
+  else
+      print ""
+  fi
     fi
 }
 
@@ -149,7 +148,7 @@ if [ -x /usr/bin/dircolors ]; then
 
 #aliases (In these aliases u can modify your command aliases)
 alias cls='clear'
-alias ip='ifconfig | grep "ipv4"'
+alias ip='ifconfig | grep "inet"'
 alias locip='curl ipinfo.io/ip'
 alias netreset='service network-manager restart'
 alias apstart='service apache2 start'
@@ -183,30 +182,30 @@ fi
 #----- AWS -------
 
 s3ls(){
-aws s3 ls s3://$ip
+aws s3 ls s3://$1
 }
 
 s3cp(){
-aws s3 cp $2 s3://$ip 
+aws s3 cp $2 s3://$1 
 }
 
 #---- Content discovery ----
 thewadl(){ #this grabs endpoints from a application.wadl and puts them in yahooapi.txt
-curl -s $ip | grep path | sed -n "s/.*resource path=\"\(.*\)\".*/\1/p" | tee -a ~/recon/dirsearch/db/yahooapi.txt
+curl -s $1 | grep path | sed -n "s/.*resource path=\"\(.*\)\".*/\1/p" | tee -a ~/recon/dirsearch/db/yahooapi.txt
 }
 
 #----- recon -----
 crtndstry(){
-./recon/crtndstry/crtndstry $ip
+./recon/crtndstry/crtndstry $1
 }
 
 am(){ #runs amass passively and saves to json
-amass enum --passive -d $ip -json $ip.json
-jq .name $ip.json | sed "s/\"//g"| httprobe -c 60 | tee -a $ip-domains.txt
+amass enum --passive -d $1 -json $1.json
+jq .name $1.json | sed "s/\"//g"| httprobe -c 60 | tee -a $1-domains.txt
 }
 
 certprobe(){ #runs httprobe on all the hosts from certspotter
-curl -s https://crt.sh/\?q\=\%.$ip\&output\=json | jq -r '.[].name_value' | sed 's/\*\.//g' | sort -u | httprobe | tee -a ./all.txt
+curl -s https://crt.sh/\?q\=\%.$1\&output\=json | jq -r '.[].name_value' | sed 's/\*\.//g' | sort -u | httprobe | tee -a ./all.txt
 }
 
 mscan(){ #runs masscan
@@ -214,37 +213,37 @@ sudo masscan -p4443,2075,2076,6443,3868,3366,8443,8080,9443,9091,3000,8000,5900,
 
 
 certspotter(){ 
-curl -s https://certspotter.com/api/v0/certs\?domain\=$ip | jq '.[].dns_names[]' | sed 's/\"//g' | sed 's/\*\.//g' | sort -u | grep $ip
+curl -s https://certspotter.com/api/v0/certs\?domain\=$1 | jq '.[].dns_names[]' | sed 's/\"//g' | sed 's/\*\.//g' | sort -u | grep $1
 } #h/t Michiel Prins
 
 crtsh(){
-curl -s https://crt.sh/?Identity=%.$ip | grep ">*.$ip" | sed 's/<[/]*[TB][DR]>/\n/g' | grep -vE "<|^[\*]*[\.]*$ip" | sort -u | awk 'NF'
+curl -s https://crt.sh/?Identity=%.$1 | grep ">*.$1" | sed 's/<[/]*[TB][DR]>/\n/g' | grep -vE "<|^[\*]*[\.]*$1" | sort -u | awk 'NF'
 }
 
 certnmap(){
-curl https://certspotter.com/api/v0/certs\?domain\=$ip | jq '.[].dns_names[]' | sed 's/\"//g' | sed 's/\*\.//g' | sort -u | grep $ip  | nmap -T5 -Pn -sS -i - -$
+curl https://certspotter.com/api/v0/certs\?domain\=$1 | jq '.[].dns_names[]' | sed 's/\"//g' | sed 's/\*\.//g' | sort -u | grep $1  | nmap -T5 -Pn -sS -i - -$
 } #h/t Jobert Abma
 
 ipinfo(){
-curl http://ipinfo.io/$ip
+curl http://ipinfo.io/$1
 }
 
 
 #------ recon ------
 dirsearch(){ runs dirsearch and takes host and extension as arguments
-python3 ~/recon/dirsearch/dirsearch.py -u $ip -e $2 -t 50 -b 
+python3 ~/recon/dirsearch/dirsearch.py -u $1 -e $2 -t 50 -b 
 }
 
 sqlmap(){
-python ~/recon/sqlmap*/sqlmap.py -u $ip 
+python ~/recon/sqlmap*/sqlmap.py -u $1 
 }
 
 ncx(){
-nc -l -n -vv -p $ip -k
+nc -l -n -vv -p $1 -k
 }
 
 crtshdirsearch(){ #gets all domains from crtsh, runs httprobe and then dir bruteforcers
-curl -s https://crt.sh/?q\=%.$ip\&output\=json | jq -r '.[].name_value' | sed 's/\*\.//g' | sort -u | httprobe -c 50 | grep https | xargs -n1 -I{} python3 ~/recon/dirsearch/dirsearch.py -u {} -e $2 -t 50 -b 
+curl -s https://crt.sh/?q\=%.$1\&output\=json | jq -r '.[].name_value' | sed 's/\*\.//g' | sort -u | httprobe -c 50 | grep https | xargs -n1 -I{} python3 ~/recon/dirsearch/dirsearch.py -u {} -e $2 -t 50 -b 
 }
 
 
