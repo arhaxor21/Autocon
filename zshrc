@@ -150,7 +150,7 @@ if [ -x /usr/bin/dircolors ]; then
 alias cls='clear'
 alias ip='ifconfig | grep "inet"'
 alias locip='curl ipinfo.io/ip'
-alias netreset='service network-manager restart'
+alias netreset='service NetworkManager restart'
 alias apstart='service apache2 start'
 alias apstop='service apache2 stop'
 alias sshstart='service ssh start'
@@ -158,6 +158,10 @@ alias sshstop='service ssh stop'
 alias pyserver='python -m SimpleHTTPServer'
 alias svstatus='service --status-all' 
 alias st='speedtest'
+alias open='xdg-open'
+alias ff='firefox'
+alias lp='leafpad'
+alias update='apt update && apt upgrade'
     export LESS_TERMCAP_mb=$'\E[1;31m'    
     export LESS_TERMCAP_md=$'\E[1;36m'     
     export LESS_TERMCAP_me=$'\E[0m'       
@@ -245,8 +249,3 @@ nc -l -n -vv -p $1 -k
 crtshdirsearch(){ #gets all domains from crtsh, runs httprobe and then dir bruteforcers
 curl -s https://crt.sh/?q\=%.$1\&output\=json | jq -r '.[].name_value' | sed 's/\*\.//g' | sort -u | httprobe -c 50 | grep https | xargs -n1 -I{} python3 ~/recon/dirsearch/dirsearch.py -u {} -e $2 -t 50 -b 
 }
-
-
-export GOROOT=/usr/local/go
-export GOPATH=$HOME/go
-export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
