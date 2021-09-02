@@ -1,4 +1,3 @@
-
 setopt autocd                     
 setopt interactivecomments 
 setopt ksharrays           
@@ -148,7 +147,7 @@ if [ -x /usr/bin/dircolors ]; then
 
 #aliases (In these aliases u can modify your command aliases)
 alias cls='clear'
-alias ip='ifconfig | grep "inet"'
+alias myip='ifconfig | grep "inet"'
 alias locip='curl ipinfo.io/ip'
 alias netreset='service NetworkManager restart'
 alias apstart='service apache2 start'
@@ -162,6 +161,15 @@ alias open='xdg-open'
 alias ff='firefox'
 alias lp='leafpad'
 alias update='apt update && apt upgrade'
+alias cls-his='echo " " > ~/.zsh_history' 
+alias profile='subl ~/.zshrc'
+alias sc='source ~/.zshrc'
+alias open-ports='lsof -i -P -n | grep LISTEN'
+alias vpnstop='service openvpn stop'
+alias burp='./.burp.sh'
+alias vpnstart='service openvpn start'
+alias zprofile='subl ~/.zprofile '
+alias zsc='source ~/.zprofile'
     export LESS_TERMCAP_mb=$'\E[1;31m'    
     export LESS_TERMCAP_md=$'\E[1;36m'     
     export LESS_TERMCAP_me=$'\E[0m'       
@@ -179,3 +187,4 @@ if [ -f /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
 
     ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#999'
 fi
+export PATH=$PATH:/root/go/bin
