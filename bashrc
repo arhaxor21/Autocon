@@ -53,17 +53,32 @@ if [ -x /usr/bin/dircolors ]; then
     alias ls='ls --color=auto'
 fi
 
+
 #aliases (In these aliases u can modify your command aliases)
 alias cls='clear'
-alias ip='ifconfig'
+alias myip='ifconfig | grep "inet"'
 alias locip='curl ipinfo.io/ip'
-alias netreset='service network-manager restart'
+alias netreset='service NetworkManager restart'
 alias apstart='service apache2 start'
 alias apstop='service apache2 stop'
 alias sshstart='service ssh start'
 alias sshstop='service ssh stop'
 alias pyserver='python -m SimpleHTTPServer'
-alias svstatus='service --status-all'
+alias svstatus='service --status-all' 
+alias st='speedtest'
+alias open='xdg-open'
+alias ff='firefox'
+alias lp='leafpad'
+alias update='apt update && apt upgrade'
+alias cls-his='echo " " > ~/.zsh_history' 
+alias profile='subl ~/.zshrc'
+alias sc='source ~/.zshrc'
+alias open-ports='lsof -i -P -n | grep LISTEN'
+alias vpnstop='service openvpn stop'
+alias burp='./.burp.sh'
+alias vpnstart='service openvpn start'
+alias zprofile='subl ~/.zprofile '
+alias zsc='source ~/.zprofile'
 
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
@@ -76,75 +91,3 @@ if ! shopt -oq posix; then
         . /etc/bash_completion
     fi
 fi
-
-# recon automation scripts here if u want that u can modify for your use
-# Just modify the script and again this to the source in your source file
-
-#----- AWS -------
-
-s3ls(){
-aws s3 ls s3://$ip
-}
-
-s3cp(){
-aws s3 cp $2 s3://$ip 
-}
-
-#---- Content discovery ----
-thewadl(){ #this grabs endpoints from a application.wadl and puts them in yahooapi.txt
-curl -s $ip | grep path | sed -n "s/.*resource path=\"\(.*\)\".*/\1/p" | tee -a ~/recon/dirsearch/db/yahooapi.txt
-}
-
-#----- recon -----
-crtndstry(){
-./recon/crtndstry/crtndstry $ip
-}
-
-am(){ #runs amass passively and saves to json
-amass enum --passive -d $ip -json $ip.json
-jq .name $ip.json | sed "s/\"//g"| httprobe -c 60 | tee -a $ip-domains.txt
-}
-
-certprobe(){ #runs httprobe on all the hosts from certspotter
-curl -s https://crt.sh/\?q\=\%.$ip\&output\=json | jq -r '.[].name_value' | sed 's/\*\.//g' | sort -u | httprobe | tee -a ./all.txt
-}
-
-mscan(){ #runs masscan
-sudo masscan -p4443,2075,2076,6443,3868,3366,8443,8080,9443,9091,3000,8000,5900,8081,6000,10000,8181,3306,5000,4000,8888,5432,15672,9999,161,4044,7077,4040,9000,8089,443,744$}
-}
-
-certspotter(){ 
-curl -s https://certspotter.com/api/v0/certs\?domain\=$ip | jq '.[].dns_names[]' | sed 's/\"//g' | sed 's/\*\.//g' | sort -u | grep $ip
-} #h/t Michiel Prins
-
-crtsh(){
-curl -s https://crt.sh/?Identity=%.$ip | grep ">*.$ip" | sed 's/<[/]*[TB][DR]>/\n/g' | grep -vE "<|^[\*]*[\.]*$ip" | sort -u | awk 'NF'
-}
-
-certnmap(){
-curl https://certspotter.com/api/v0/certs\?domain\=$ip | jq '.[].dns_names[]' | sed 's/\"//g' | sed 's/\*\.//g' | sort -u | grep $ip  | nmap -T5 -Pn -sS -i - -$
-} #h/t Jobert Abma
-
-ipinfo(){
-curl http://ipinfo.io/$ip
-}
-
-
-#------ recon ------
-dirsearch(){ runs dirsearch and takes host and extension as arguments
-python3 ~/recon/dirsearch/dirsearch.py -u $ip -e $2 -t 50 -b 
-}
-
-sqlmap(){
-python ~/recon/sqlmap*/sqlmap.py -u $ip 
-}
-
-ncx(){
-nc -l -n -vv -p $ip -k
-}
-
-crtshdirsearch(){ #gets all domains from crtsh, runs httprobe and then dir bruteforcers
-curl -s https://crt.sh/?q\=%.$ip\&output\=json | jq -r '.[].name_value' | sed 's/\*\.//g' | sort -u | httprobe -c 50 | grep https | xargs -n1 -I{} python3 ~/recon/dirsearch/dirsearch.py -u {} -e $2 -t 50 -b 
-}
-
-
